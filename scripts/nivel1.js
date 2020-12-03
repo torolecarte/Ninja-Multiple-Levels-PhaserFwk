@@ -70,7 +70,7 @@ var nivel1_gameObj = {
     });
     this.physics.add.collider(player, plataformas);
     this.physics.add.overlap(player, coins, collectCoin, null, this);
-
+    
     var camera = this.cameras.main;
     camera.startFollow(player);
     camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
@@ -108,16 +108,16 @@ var nivel1_gameObj = {
       player.anims.play("turn", true);
     }
 
-    if(!player.body.onFloor()
+    if (!player.body.onFloor()
       && player.body.onWall()
-      && player.body.velocity.y < 0){
-      if(cursors.right.isDown) {
+      && player.body.velocity.y < 0) {
+      if (cursors.right.isDown) {
         player.angle = -90;
       }
-      if(cursors.left.isDown) {
+      if (cursors.left.isDown) {
         player.angle = 90;
       }
-    }else {
+    } else {
       player.angle = 0;
     }
   }
